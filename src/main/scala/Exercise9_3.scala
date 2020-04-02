@@ -4,6 +4,6 @@ object Exercise9_3 extends App {
   //  than 12 characters to the console. Extra credit if you can do this in a single line.
 
 
-  """\w{12,}""".r.findAllIn(scala.io.Source.fromFile("Ex9_3.txt").mkString).foreach{println}
+  """\w{12,}""".r.findAllIn(scala.io.Source.fromFile("/home/antonio/Training/src/main/resources/Ex9_3.txt").mkString).foreach{println}
 
 }

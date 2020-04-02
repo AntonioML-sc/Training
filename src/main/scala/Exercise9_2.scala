@@ -7,13 +7,13 @@ object Exercise9_2 extends App {
   import java.io._
   import scala.io.Source
 
-  val in = Source.fromFile("Ex9_2.txt")
+  val in = Source.fromFile("/home/antonio/Training/src/main/resources/Ex9_2.txt")
 
   val tabPattern = """\t+""".r
 
   val st = tabPattern.replaceAllIn(in.mkString," ")
 
-  val pw = new PrintWriter("Ex9_2.txt")
+  val pw = new PrintWriter("/home/antonio/Training/src/main/resources/Ex9_2.txt")
 
   pw.write(st)
 

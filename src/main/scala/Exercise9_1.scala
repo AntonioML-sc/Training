@@ -6,11 +6,11 @@ object Exercise9_1 extends App {
   import scala.io.Source
   import java.io._
 
-  val in = Source.fromFile("Ex9_1.txt")
+  val in = Source.fromFile("/home/antonio/Training/src/main/resources/Ex9_1.txt")
 
   val st = in.getLines.toArray.reverse.mkString("\n")
 
-  val pw = new PrintWriter("Ex9_1.txt")
+  val pw = new PrintWriter("/home/antonio/Training/src/main/resources/Ex9_1.txt")
 
   pw.write(st)
 
