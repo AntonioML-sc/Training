@@ -1,4 +1,12 @@
 object Exercise8_4 extends App {
+
+  //  Define an abstract class Item with methods price and description . A SimpleItem is
+  //  an item whose price and description are specified in the constructor. Take
+  //  advantage of the fact that a val can override a def . A Bundle is an item that
+  //  contains other items. Its price is the sum of the prices in the bundle. Also
+  //  provide a mechanism for adding items to the bundle and a suitable description
+  //  method.
+
   abstract class Item {
     def price:Double
     def description:String
@@ -18,8 +26,8 @@ object Exercise8_4 extends App {
         bundleName + " with one " + content.map(_.description).mkString(", one ") + " inside."
     }
 
-    def AddSimpleItem(newConts:SimpleItem*) { // a method to add items to the bundle
-      for (newCont <- newConts) content = content :+ newCont
+    def addSimpleItem(newConts:SimpleItem*) { // a method to add items to the bundle
+      content = content ++ newConts
     }
   }
 
@@ -28,7 +36,7 @@ object Exercise8_4 extends App {
   val pencil = new SimpleItem(1.0,"pencil")
   val pencilCase = new Bundle(5.0,"pencil case")
   pencilCase.description
-  pencilCase.AddSimpleItem(pen,pencil,eraser)
+  pencilCase.addSimpleItem(pen,pencil,eraser)
   pencilCase.bundleName
   pencilCase.description
   pencilCase.bundlePrice

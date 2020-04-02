@@ -1,5 +1,13 @@
 object Exercise8_6 extends App {
 
+  //  Define an abstract class Shape with an abstract method centerPoint and subclasses
+  //  Rectangle and Circle . Provide appropriate constructors for the subclasses and
+  //  override the centerPoint method in each subclass.
+  //
+  //  NOTE: I have added some methods not required in the exercise
+
+  import scala.math.{Pi,pow,abs}
+
   class Point(val x:Double, val y:Double) { // not required, but used in exercise 5, so...
     def toTuple: (Double, Double) = (x,y)
   }
@@ -10,7 +18,6 @@ object Exercise8_6 extends App {
 
   class Rectangle(val corner1:Point, val corner2:Point) extends Shape {
     // consider corner1 and corner 2 as opposite corners of the rectangle
-    import scala.math.{abs}
     def centerPoint:Point = new Point((corner1.x + corner2.x)/2, (corner1.y + corner2.y)/2)
     def width:Double = abs(corner2.x - corner1.x)  // not required
     def height:Double = abs(corner2.y - corner1.y)  // not required
@@ -19,7 +26,6 @@ object Exercise8_6 extends App {
 
   class Circle(val centerPoint:Point, val radius:Double) extends Shape {
     // center point is provided in the constructor
-    import scala.math.{Pi,pow}
     def area:Double =  Pi * pow(radius,2)  // not required
   }
 
