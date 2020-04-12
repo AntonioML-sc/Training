@@ -5,14 +5,14 @@ object FizzBuzz extends App {
   // If a number were multiple of 5, it becomes "Buzz"
   // If a number were multiple of both of them, it becomes "FizzBuzz"
 
-  def fizzbuzz(l:List[Int]):List[Any] = {
-    def fb1(n:Int): Any = n match {
-      case n:Int if ((n % 3 == 0) && (n % 5 == 0)) => "FizzBuzz"
-      case n:Int if (n % 3 == 0) => "Fizz"
-      case n:Int if (n % 5 == 0) => "Buzz"
-      case _ => n
+  def fizzbuzz(l:List[Int]):List[String] = {
+    def fb1(n:Int): String = n match {
+      case fb if fb % 15 == 0 => "FizzBuzz"
+      case f if f % 3 == 0 => "Fizz"
+      case b if b % 5 == 0 => "Buzz"
+      case _ => n.toString
     }
-  l.map(fb1(_))
+    l.map(fb1)
   }
   val listOf100 = List.range(1,101)
   val anotherListOf100 = (1 to 100).toList
